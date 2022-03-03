@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:blue">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Prediction of ticket Assignee Team</h2>
+            <h3>Summary</h3>
+			<textarea rows = "5" cols = "160" name = "Summary" id="first" type="text">
+               
+            </textarea>
+                     
+            <h3>Description</h3>
+            <textarea rows = "5" cols = "160" name = "Description" id="Third" type="text">    
+            </textarea>
+			<h3>Component </h3><br><select id="fourth" name="Component" required="required">
+			    <option value="API Issue">API Issue</option>
+                <option value="CEDP Access Request">CEDP Access Request</option>
+                <option value="CEDP Cloud operations">CEDP Cloud operations</option>
+				<option value="CEDP Ingestion Issue">CEDP Ingestion Issue</option>
+				<option value="CEDP Portal">CEDP Portal</option>
+				<option value="Catalog a Database on DataStage Request">Catalog a Database on DataStage Request</option>
+                <option value="Co-Creation K8s Issue">Co-Creation K8s Issue</option>
+                <option value="Component_others">Component_others</option>
+				<option value="DB2W (DASHDB) Issue">DB2W (DASHDB) Issue</option>
+				<option value="DB2W Access Request">DB2W Access Request</option>
+				<option value="DataStage Access Request">DataStage Access Request</option>
+                <option value="DataStage Issue">DataStage Issue</option>
+                <option value="Drop Zone Issue">Drop Zone Issue</option>
+				<option value="ERDM Issue">ERDM Issue</option>
+				<option value="ERDM Requirement Request">ERDM Requirement Request</option>
+				<option value="Functional ID Access Request">Functional ID Access Request</option>
+                <option value="IGC Issue">IGC Issue</option>
+                <option value="Infrastructure Updates Request">Infrastructure Updates Request</option>
+				<option value="Jira Access, Projects & Configs">Jira Access, Projects & Configs</option>
+				<option value="Jira Service Desk Issue">Jira Service Desk Issue</option>
+				<option value="Mono Repo Access">Mono Repo Access</option>
+                <option value="Other Access Request">Other Access Request</option>
+                <option value="Other CEDP Issue">Other CEDP Issue</option>
+				<option value="Questions">Questions</option>
+				<option value="Table Management Request">Table Management Request</option>
+				<option value="User Zones - BigSQL HDFS Issue">User Zones - BigSQL HDFS Issue</option>
+                <option value="Watson Studio">Watson Studio</option>
+                <option value="Watson Studio Access">Watson Studio Access</option>
+				
+			</select>
+            <h3>Label</h3><br><select name="Label" id="label" required="required">
+                <option value="API">API</option>
+                <option value="Access">Access</option>
+                <option value="Bluegroups">Bluegroups</option>
+				<option value="CEDP_Portal">CEDP_Portal</option>
+				<option value="CloudOther">CloudOther</option>
+                <option value="CloudSpecific">CloudSpecific</option>
+                <option value="DAM">DAM</option>
+				<option value="DB2">DB2</option>
+				<option value="DB2W">DB2W</option>
+                <option value="DB2WoC">DB2WoC</option>
+                <option value="DataStage">DataStage</option>
+				<option value="Db2WoCAccess">Db2WoCAccess</option>
+				<option value="Drop_Zone">Drop_Zone</option>
+                <option value="ERDM">ERDM</option>
+                <option value="GitHub_access">GitHub_access</option>
+				<option value="IGC">IGC</option>
+				<option value="Infrastructure">Infrastructure</option>
+                <option value="Ingestion">Ingestion</option>
+                <option value="JIRA">JIRA</option>
+				<option value="JiraAccess">JiraAccess</option>
+				<option value="JiraSupport">JiraSupport</option>
+                <option value="Kafka">Kafka</option>
+                <option value="Kubernetes">Kubernetes</option>
+				<option value="Lbl_others">Lbl_others</option>
+				<option value="NewCo">NewCo</option>
+                <option value="Non_CEDP">Non_CEDP</option>
+                <option value="Non_Support">Non_Support</option>
+				<option value="On-Boarding">On-Boarding</option>
+				<option value="Other_CEDP">Other_CEDP</option>
+                <option value="Question">Question</option>
+                <option value="Support_bot">Support_bot</option>
+				<option value="TableManagement">TableManagement</option>
+				<option value="User_Zones_BigSQL/HDFS">User_Zones_BigSQL/HDFS</option>
+				<option value="User_to_Resolve">User_to_Resolve</option>
+				<option value="Watson_Studio">Watson_Studio</option>
+                <option value="access">access</option>
+                <option value="catalog-sync-issue">catalog-sync-issue</option>
+				<option value="kyndryl">kyndryl</option>
+            </select>
+            <h3>Issue_Type</h3><br><select name="Issue_Type" id="resea" required="required">
+                <option value="Incident">Incident</option>
+                <option value="Question">Question</option>
+				<option value="Service Request">Service_Request</option>
+				<option value="Service Request with Approvals">SR_Approvals</option>
+            </select>
+            
+            <br><br><button id="sub" type="submit ">Predict Assignee Team</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-color: lightslategray;
+            text-align: center;
+            padding: 0px;
+        }
+        
+        #research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+        
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        #label {
+            width: 210px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+        
+        #fuel:hover {
+            background-color: coral;
+        }
+        
+        #research {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #research:hover {
+            background-color: coral;
+        }
+        
+        #resea {
+            width: 200px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #resea:hover {
+            background-color: coral;
+        }
+        
+        #sub {
+            width: 300px;
+            height: 30px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+        
+        #first {
+            border-radius: 14px;
+            height: 100px;
+			width: 1000px;
+            font-size: 20px;
+            text-align: initial;
+        }
+        
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
