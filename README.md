@@ -7,7 +7,8 @@ System will assign ticket to the corresponding responsible team, set the correct
 **Responsibilities** -
 
 * Collected data of resolved tickets from atlassian Jira tool’s service desk used for project work.
-* Pre-processed data - Imputed missing data with other valid value ,  
+* Pre-processed data - 
+  * Imputed missing data with other valid value ,  
   * Instead of individual ID of Assignee, having here AssigneeTeam name,the assignee person belongs to.This is required because, for a particular type of ticket,responsible         individual assignee may change over time but responsible assinee team doesn't change. This Assignee Team is target data.
   * For features Label and Component, all very less frequent values are replaced with a category like 'Lbl_others' and 'Component_others' respectively. 
   * There were some labels,component with different text value(or typo) but actually same label category, that handled by replacing using a mapping dictionary.
