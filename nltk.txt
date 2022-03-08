@@ -1,2 +1,2 @@
-stem\n
-corpus\n
+stem\r\n
+corpus\r\n
