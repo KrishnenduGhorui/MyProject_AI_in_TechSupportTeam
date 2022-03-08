@@ -1,2 +1,2 @@
-stem"\n"
-corpus"\n"
+stem\n
+corpus\n
