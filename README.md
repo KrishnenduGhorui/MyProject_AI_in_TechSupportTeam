@@ -19,3 +19,10 @@ System will assign ticket to the corresponding responsible team, set the correct
 * Built and trained several ML models (**Multinomial Naive Bayes, Random Forest Classifier, Support Vector Machine**), DL modes (**LSTM**).
 * Evaluated model’s performance by **Confusion Matrix, Accuracy Score, classification report(Precision,recall,F1 score**)
 * Deployed the model performing best using **Flask,Pickle**.
+
+Deployed web application page for this model is as below - 
+![image](https://user-images.githubusercontent.com/77465776/161405312-b8eb1f17-6014-4f85-b299-515c8333426b.png)
+With input values as below - 
+![image](https://user-images.githubusercontent.com/77465776/161405464-309bc539-c7ee-41ed-bc8b-8f0158e64a1f.png)
+Output will come like as below - 
+![image](https://user-images.githubusercontent.com/77465776/161405480-30ce11de-c7c0-46f5-9973-683231c74f08.png)
