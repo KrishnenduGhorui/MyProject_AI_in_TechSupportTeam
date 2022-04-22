@@ -4,6 +4,8 @@
 **Goal** - Making process automatic in Tech Support team by developing an automatic system with ML/DL models that can manage ticket/case raised by users for getting support, without any human intervention.
 System will assign ticket to the corresponding responsible team, set the correct Label by processing text Summary and Description mentioned in the ticket by NLP and ML/DL algorithm.This will results support team’s function automatic, faster and error less and need of less man resource, ultimately saving cost.
 
+System also predicts the correct resolution time that should be for a ticket, if team takes much more time than predicted time to resolve, notification will be sent to management.
+
 **Responsibilities** -
 
 * Collected data of resolved tickets from **atlassian Jira tool**’s service desk used for project work.
@@ -16,8 +18,8 @@ System will assign ticket to the corresponding responsible team, set the correct
   * Cleaned text by **NLTK, lemmatizing and removing stopwords**.   
   * Vectorized data by **TfidfVectorizer**.
   * Made data balanced by **SMOTE**.
-* Built and trained several ML models (**Multinomial Naive Bayes, Random Forest Classifier, Support Vector Machine**), DL modes (**LSTM**).
-* Evaluated model’s performance by **Confusion Matrix, Accuracy Score, classification report(Precision,recall,F1 score**)
+* Built and trained several ML models (**Multinomial Naive Bayes, Random Forest Classifier, Support Vector Machine**), DL modes (**LSTM**) and and for regression **Random Forest Regressor, K Neighbors Regressor , Ridge Regressor**.
+* Evaluated performance classification model  by **Confusion Matrix, Accuracy Score, classification report(Precision,recall,F1 score**) and regressor model by **R2 score, Adjusted R2 score,rmse,mae**.
 * Deployed the model performing best using **Flask,Pickle**.
 
 Deployed web application page for this model is as below - 
